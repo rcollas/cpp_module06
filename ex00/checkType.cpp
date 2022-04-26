@@ -1,12 +1,5 @@
 #include "converter.hpp"
 
-class InvalidTypeException : std::exception {
-	public:
-		virtual const char * what () const throw() {
-			return "Cannot convert: invalid type";
-		};
-};
-
 bool isInteger(std::string const &str) {
 
 	if (str.empty()) {
@@ -45,6 +38,18 @@ bool isChar(std::string const &str) {
 	return str.length() == 1;
 }
 
+bool isPseudoLitteral(std::string const &str) {
+
+	std::string litteral[6] = {"-inff","+inff","nanf",
+							   "-inf", "+inf", "nan"};
+	for (int i = 0; i < 6; i++) {
+		if (str == litteral[i]) {
+			return true;
+		}
+	}
+	return false;
+}
+
 int getType(std::string const &str) {
 
 	if (isInteger(str)) {
@@ -55,7 +60,9 @@ int getType(std::string const &str) {
 		return DOUBLE;
 	} else if (isChar(str)) {
 		return CHAR;
+	} else if (isPseudoLitteral(str)) {
+		return PSEUDO_LITTERAL;
 	} else {
-		throw InvalidTypeException();
+		throw std::invalid_argument("Invalid type");
 	}
 }
