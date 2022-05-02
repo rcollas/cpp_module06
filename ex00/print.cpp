@@ -7,7 +7,7 @@ void printChar(char value, double doubleVal) {
 	} else if (!isprint(value)) {
 		std::cout << "char: Non displayable" << std::endl;
 	} else {
-		std::cout << "char: " << value << std::endl;
+		std::cout << "char: '" << value << "'" << std::endl;
 	}
 }
 
