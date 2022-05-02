@@ -13,8 +13,6 @@ void handleInt(std::string input) {
 void handleFloat(std::string input) {
 
 	float floatVal = static_cast<float>(std::atof(input.c_str()));
-	std::cout << std::setprecision(10);
-	std::cout << "float val = " << floatVal << std::endl;
 	int intVal = static_cast<int>(floatVal);
 	double doubleVal = static_cast<double>(floatVal);
 	char charVal = static_cast<char>(floatVal);

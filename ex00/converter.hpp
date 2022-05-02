@@ -9,6 +9,10 @@
 #include <iomanip>
 #include <cmath>
 
+extern bool intOverflow;
+extern bool floatOverflow;
+extern bool doubleOverflow;
+
 enum {
 	CHAR = 0,
 	INT = 1,
@@ -16,6 +20,7 @@ enum {
 	DOUBLE = 3,
 	PSEUDO_LITTERAL = 4
 };
+
 
 bool isInteger(std::string const &str);
 bool isFloat(std::string const &str);
