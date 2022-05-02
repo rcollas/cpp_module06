@@ -1,9 +1,4 @@
 #include "converter.hpp"
-#include <limits>
-#include <iomanip>
-#include <cmath>
-
-typedef std::numeric_limits<double> dbl;
 
 void printOutput(int intVal, float floatVal, double doubleVal, char charVal) {
 
@@ -19,8 +14,9 @@ void printOutput(int intVal, float floatVal, double doubleVal, char charVal) {
 	} else {
 		std::cout << "int: " << intVal << std::endl;
 	}
-	std::cout << std::setprecision(1) << std::fixed;
+	std::cout << std::setprecision(6) << std::fixed;
 	std::cout << "float: " << floatVal << "f" << std::endl;
+	std::cout << std::setprecision(10) << std::fixed;
 	std::cout << "double: " << doubleVal << std::endl;
 }
 

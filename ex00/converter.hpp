@@ -4,6 +4,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <stdexcept>
+#include <climits>
+#include <cfloat>
+#include <iomanip>
+#include <cmath>
 
 enum {
 	CHAR = 0,

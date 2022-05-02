@@ -7,7 +7,8 @@ bool isInteger(std::string const &str) {
 	}
 
 	char *ptr;
-	strtol(str.c_str(), &ptr, 10);
+
+	std::strtol(str.c_str(), &ptr, 10);
 	return (*ptr) == '\0';
 }
 
@@ -18,7 +19,8 @@ bool isFloat(std::string const &str) {
 	}
 
 	char *ptr;
-	strtof(str.c_str(), &ptr);
+
+	std::strtod(str.c_str(), &ptr);
 	return (*ptr) == 'f' && str.find('f') + 1 == str.length();
 }
 
@@ -29,7 +31,8 @@ bool isDouble(std::string const &str) {
 	}
 
 	char *ptr;
-	strtod(str.c_str(), &ptr);
+	std::strtod(str.c_str(), &ptr);
+
 	return (*ptr) == '\0' && (str.find('.') != std::string::npos);
 }
 
