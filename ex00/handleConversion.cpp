@@ -12,7 +12,7 @@ void handleInt(std::string input) {
 
 void handleFloat(std::string input) {
 
-	float floatVal = std::atof(input.c_str());
+	float floatVal = static_cast<float>(std::atof(input.c_str()));
 	int intVal = static_cast<int>(floatVal);
 	double doubleVal = static_cast<double>(floatVal);
 	char charVal = static_cast<char>(floatVal);

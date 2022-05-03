@@ -3,6 +3,7 @@ NAME		=	convert
 SRC_FILES 	=	main.cpp \
 				checkType.cpp \
 				handleConversion.cpp \
+				print.cpp \
 
 OBJS_DIR	=	objs
 

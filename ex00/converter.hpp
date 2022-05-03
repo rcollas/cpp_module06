@@ -4,6 +4,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <stdexcept>
+#include <climits>
+#include <cfloat>
+#include <iomanip>
+#include <cmath>
+
+extern bool intOverflow;
+extern bool floatOverflow;
+extern bool doubleOverflow;
 
 enum {
 	CHAR = 0,
@@ -12,6 +20,7 @@ enum {
 	DOUBLE = 3,
 	PSEUDO_LITTERAL = 4
 };
+
 
 bool isInteger(std::string const &str);
 bool isFloat(std::string const &str);
