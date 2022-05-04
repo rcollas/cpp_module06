@@ -8,8 +8,10 @@ bool doubleOverflow = false;
 
 int main(int argc, char **argv) {
 
-	(void)argc;
-
+	if (argc <= 1) {
+		std::cerr << "converter takes one argument" << std::endl;
+		return 1;
+	}
 
 	int type;
 	try {

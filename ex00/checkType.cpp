@@ -77,14 +77,14 @@ int getType(std::string const &str) {
 
 	if (isPseudoLitteral(str)) {
 		return PSEUDO_LITTERAL;
+	}  else if (isChar(str)) {
+		return CHAR;
 	} else if (isInteger(str)) {
 		return INT;
 	} else if (isFloat(str)) {
 		return FLOAT;
 	} else if (isDouble(str)) {
 		return DOUBLE;
-	} else if (isChar(str)) {
-		return CHAR;
 	} else {
 		throw std::invalid_argument("Invalid type");
 	}
