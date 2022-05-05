@@ -8,7 +8,7 @@ bool doubleOverflow = false;
 
 int main(int argc, char **argv) {
 
-	(void)argc;
+	(void) argc;
 
 
 	int type;
