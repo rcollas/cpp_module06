@@ -2,7 +2,7 @@
 
 void handleInt(std::string input) {
 
-	int intVal = std::atoi(input.c_str());
+	int intVal = static_cast<int>(std::atoi(input.c_str()));
 	float floatVal = static_cast<float>(intVal);
 	double doubleVal = static_cast<double>(intVal);
 	char charVal = static_cast<char>(intVal);
@@ -22,7 +22,7 @@ void handleFloat(std::string input) {
 
 void handleDouble(std::string input) {
 
-	double doubleVal = std::atof(input.c_str());
+	double doubleVal = static_cast<double>(std::atof(input.c_str()));
 	int intVal = static_cast<int>(doubleVal);
 	float floatVal = static_cast<float>(doubleVal);
 	char charVal = static_cast<char>(doubleVal);

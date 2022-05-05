@@ -40,21 +40,20 @@ void identify(Base *p) {
 
 void identify(Base &p) {
 
-	A* a = dynamic_cast<A *>(&p);
-
-	if (a != 0) {
+	try {
+		A a = dynamic_cast<A &>(p);
 		std::cout << "Pointer to type A" << std::endl;
-	}
+	} catch (std::exception &exception) {}
 
-	B* b = dynamic_cast<B *>(&p);
-	if (b != 0) {
+	try {
+		B b = dynamic_cast<B &>(p);
 		std::cout << "Pointer to type B" << std::endl;
-	}
+	} catch (std::exception &exception) {}
 
-	C* c = dynamic_cast<C *>(&p);
-	if (c != 0) {
+	try {
+		C c = dynamic_cast<C &>(p);
 		std::cout << "Pointer to type C" << std::endl;
-	}
+	} catch (std::exception &exception) {}
 }
 
 int main() {

@@ -24,10 +24,10 @@ bool isFloat(std::string const &str) {
 	}
 
 	char *ptr;
-	float nb;
+	double nb;
 
 	nb = std::strtod(str.c_str(), &ptr);
-	if (std::isinf(nb)) {
+	if (nb > FLT_MAX || nb < FLT_MIN) {
 		intOverflow = true;
 		floatOverflow = true;
 		return false;
@@ -58,7 +58,7 @@ bool isDouble(std::string const &str) {
 
 bool isChar(std::string const &str) {
 
-	return str.length() == 1;
+	return str.length() == 1 && !std::isdigit(str[0]);
 }
 
 bool isPseudoLitteral(std::string const &str) {
@@ -75,7 +75,9 @@ bool isPseudoLitteral(std::string const &str) {
 
 int getType(std::string const &str) {
 
-	if (isPseudoLitteral(str)) {
+	if (isChar(str)) {
+		return CHAR;
+	} else if (isPseudoLitteral(str)) {
 		return PSEUDO_LITTERAL;
 	} else if (isInteger(str)) {
 		return INT;
@@ -83,8 +85,6 @@ int getType(std::string const &str) {
 		return FLOAT;
 	} else if (isDouble(str)) {
 		return DOUBLE;
-	} else if (isChar(str)) {
-		return CHAR;
 	} else {
 		throw std::invalid_argument("Invalid type");
 	}
