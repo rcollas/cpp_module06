@@ -22,7 +22,6 @@ Base *generate() {
 void identify(Base *p) {
 
 	A* a = dynamic_cast<A *>(p);
-
 	if (a != 0) {
 		std::cout << "Pointer to type A" << std::endl;
 	}
@@ -59,9 +58,13 @@ void identify(Base &p) {
 int main() {
 
 	Base *foo = generate();
+	Base *bar = 0;
 
 	identify(foo);
 	identify(*foo);
+
+	identify(bar);
+	identify(*bar);
 
 	delete foo;
 
